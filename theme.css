@@ -1,0 +1,104 @@
+/*Background color*/
+body {
+	background-color: #99ceff;
+}
+
+/*Rounded rectangle*/
+#header {
+	width: 100%;
+	height: 3em;
+	border-radius: 4px;
+	background-color: #3399ff;
+}
+
+/*Title of webpage*/
+h1 {
+	font-family: Arial;
+	color: white;
+	position: relative;
+	text-align: center;
+	padding-top: 5px;
+}
+
+/*Question*/
+#white_with_highlights {
+	color: white;
+	background-color: #ff3385;
+}
+
+/*iXperience color*/
+#pink_with_highlights {
+	color: #ff3385;
+	background-color: white;
+}
+
+/*Hover behavior over "iXperience website"*/
+span:nth-child(2):hover {
+	text-decoration: underline;
+}
+
+/*Row separators to create grid*/
+.container {
+	width: 100%;
+	height: 135px;
+	text-align: center;
+}
+
+/*Circular images that fit within the frames*/
+img {
+	width: 120px;
+	height: 120px;
+	border-radius: 50%;
+}
+
+/*Circular frames for the photo grid*/
+.circle {
+	display: inline-block;
+	height: 120px;
+	width: 120px;
+	border-radius: 100%;
+	border: 4px solid white;
+	margin: 2.5px;
+}
+
+/*Hover behavior over the circular images*/
+div div:hover {
+	border: 4px solid #ff3385;
+}
+
+/*Fun fact styling*/
+#small {
+	font-family: sans-serif;
+	font-size: 14px;
+	color: white;
+	text-align: center;
+}
+
+/*Footer (smaller rounded rectangle*/
+#footer {
+	width: 100%;
+	height: 1.5em;
+	border-radius: 4px;
+	background-color: #3399ff;
+}
+
+/*Signature of Adelle*/
+#footer_right {
+	font-family: sans-serif;
+	color: white;
+	font-size: 12px;
+	text-align: right;
+	padding-top: 5px;
+	padding-right: 10px;
+}
+
+/*Hover behavior on link to Adelle's GitHub page*/
+div p span:hover {
+	text-decoration: underline;
+}
+
+/*No text decoration for links*/
+a {
+	color: white;
+	text-decoration: none;
+}
