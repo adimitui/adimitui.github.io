@@ -18,6 +18,19 @@
 	<!--Question-->
 	<p style="font-family: sans-serif; text-align: center"><span id="white_with_highlights">Only one of the following pictures leads to the </span><span id="pink_with_highlights"><strong>iXperience website</strong></span><span id="white_with_highlights">. Which one is it?</span></p>
 
+	<!--Javascript for onclick-->
+	<script language="javascript">
+		var confirmExit = function() {
+			if (confirm("The link you clicked on leads to a third party website. Do you want to leave Adelle's Webpage?")) {
+				alert("You will be redirected shortly.");
+				return true;
+			} else {
+				alert("You will stay on Adelle's Webpage.");
+				return false;
+			}
+		}
+	</script>
+
 	<!--FIRST row of 3-->
 	<div class="container">
 		<!--ONE-->
@@ -50,7 +63,7 @@
 
 		<!--SIX (this picture is the link to the iXperience website-->
 		<div class="circle">
-			<a href="http://ixperience.co.za/">
+			<a href="http://ixperience.co.za/" onclick="return confirmExit();">
 				<img src="http://www.theanimalfiles.com/images/springbok_2.jpg"/>
 			</a>
 		</div>
@@ -78,7 +91,7 @@
 	<p id="small">Fun fact: The national animal of South Africa is the <span style="color: #ff3385"><strong><em>springbok</em></strong></span>. They are known to <em>pronk</em> (referring to its jumping display), leading to its common name.</p>
 
 	<div id="footer">
-		<p id="footer_right">First Webpage of <span><a href="https://github.com/adimitui/">Adelle</a></span>. No copyright infringement is intended.</p>
+		<p id="footer_right">First Webpage of <span><a href="https://github.com/adimitui/" onclick="return confirmExit();">Adelle</a></span>. No copyright infringement is intended.</p>
 	</div>
 </body>
 </html>
