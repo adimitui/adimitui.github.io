@@ -23,6 +23,29 @@
 </head>
 
 <body>
+	<!-- Javascript -->
+	<script type="text/javascript">
+		// When the user clicks on the button, toggle between hiding and showing the dropdown content
+		function myFunction() {
+		    document.getElementById("myDropdown").classList.toggle("show");
+		}
+
+		// Close the dropdown menu if the user clicks outside of it
+		window.onclick = function(event) {
+		  if (!event.target.matches('.resume-button')) {
+
+		    var dropdowns = document.getElementsByClassName("resume-description");
+		    var i;
+		    for (i = 0; i < dropdowns.length; i++) {
+		      var openDropdown = dropdowns[i];
+		      if (openDropdown.classList.contains('show')) {
+		        openDropdown.classList.remove('show');
+		      }
+		    }
+		  }
+		}
+	</script>
+
 	<!-- Splash Page -->
 	<a name="splash-link">
 		<div class="splash">
@@ -48,76 +71,64 @@
 				<!-- Header Navigation Bar -->
 				<div class="splash-buttons">
 					<div class="row">
-						<div class="center">
-							<div class="col-md-9">
-								<!-- Home Button -->
-								<div class="col-md-offset-3 col-md-1">
-									<div class="dropdown">
-										<a href="#splash-link">
-											<button class="circle">
-												<img src="http://i346.photobucket.com/albums/p438/adimitui/Home_zpstukokxj8.png" class="house"/>
-											</button>
-										</a>
-										<div class="dropdown-content">
-											<h5>Home</h5>
-										</div>
-									</div>
+						<div class="col-md-9">
+							<!-- Home Button -->
+							<div class="dropdown">
+								<a href="#splash-link">
+									<button class="circle">
+										<img src="http://i346.photobucket.com/albums/p438/adimitui/Home_zpstukokxj8.png" class="house"/>
+									</button>
+								</a>
+								<div class="dropdown-content">
+									<h5>Home</h5>
 								</div>
+							</div>
 
-								<!-- About Me -->
-								<div class="col-md-1">
-									<div class="dropdown">
-										<a href="#about-me-link">
-											<button class="circle">
-												<img src="http://i346.photobucket.com/albums/p438/adimitui/User%20White_zpsnbs1e42w.png" class="user"/>
-											</button>
-										</a>
-										<div class="dropdown-content">
-											<h5>About</h5>
-										</div>
-									</div>
+							<!-- About Me -->
+							<div class="dropdown">
+								<a href="#about-me-link">
+									<button class="circle">
+										<img src="http://i346.photobucket.com/albums/p438/adimitui/User%20White_zpsnbs1e42w.png" class="user"/>
+									</button>
+								</a>
+								<div class="dropdown-content">
+									<h5>About</h5>
 								</div>
+							</div>
 
-								<!-- Resume -->
-								<div class="col-md-1">
-									<div class="dropdown">
-										<a href="#resume-link">
-											<button class="circle">
-												<img src="http://i346.photobucket.com/albums/p438/adimitui/File%20White_zps5f1nid67.png" class="file"/>
-											</button>
-										</a>
-										<div class="dropdown-content">
-											<h5>Resum&eacute;</h5>
-										</div>
-									</div>
+							<!-- Resume -->
+							<div class="dropdown">
+								<a href="#resume-link">
+									<button class="circle">
+										<img src="http://i346.photobucket.com/albums/p438/adimitui/File%20White_zps5f1nid67.png" class="file"/>
+									</button>
+								</a>
+								<div class="dropdown-content">
+									<h5>Resum&eacute;</h5>
 								</div>
+							</div>
 
-								<!-- Personal -->
-								<div class="col-md-1">
-									<div class="dropdown">
-										<a href="#personal-link">
-											<button class="circle">
-												<img src="http://i346.photobucket.com/albums/p438/adimitui/Heart%20White_zps6lhbrpnu.png" class="heart"/>
-											</button>
-										</a>
-										<div class="dropdown-content">
-											<h5>Personal</h5>
-										</div>
-									</div>
+							<!-- Personal -->
+							<div class="dropdown">
+								<a href="#personal-link">
+									<button class="circle">
+										<img src="http://i346.photobucket.com/albums/p438/adimitui/Heart%20White_zps6lhbrpnu.png" class="heart"/>
+									</button>
+								</a>
+								<div class="dropdown-content">
+									<h5>Personal</h5>
 								</div>
+							</div>
 
-								<!-- Contact -->
-								<div class="col-md-1">
-									<div class="dropdown">
-										<a href="#contact-link">
-											<button class="circle">
-												<img src="http://i346.photobucket.com/albums/p438/adimitui/Email%20White_zpshkj8cdbx.png" class="message"/>
-											</button>
-										</a>
-										<div class="dropdown-content">
-											<h5>Contact</h5>
-										</div>
-									</div>
+							<!-- Contact -->
+							<div class="dropdown">
+								<a href="#contact-link">
+									<button class="circle">
+										<img src="http://i346.photobucket.com/albums/p438/adimitui/Email%20White_zpshkj8cdbx.png" class="message"/>
+									</button>
+								</a>
+								<div class="dropdown-content">
+									<h5>Contact</h5>
 								</div>
 							</div>
 						</div>
@@ -178,8 +189,13 @@
 					<div class="center">
 						<div class="col-md-6">
 							<div class="right">
-								<div class="resume-button fixed">
-									<img src="http://i346.photobucket.com/albums/p438/adimitui/ISM%20Logo%20Edited_zps8bgkdkqf.png" id="ism-logo"/>
+								<div class="resume">
+									<button onclick="myFunction()" class="resume-button fixed">
+										<img src="http://i346.photobucket.com/albums/p438/adimitui/ISM%20Logo%20Edited_zps8bgkdkqf.png" id="ism-logo"/>
+									</button>
+									<div id="myDropdown" class="resume-description">
+										<p>Lorem ipsum dolor sit amet, erat albucius contentiones ea vis, sea wisi facilisis te. Ut case aeterno nam, mel eleifend torquatos tincidunt in, forensibus scriptorem duo ei. Pro percipit dissentias ei. Ridens assentior no vel, epicurei intellegam ex nam, audiam timeam appellantur ex mel. Te mea aperiri inciderint.</p>
+									</div>
 								</div>
 							</div>
 						</div>
@@ -380,51 +396,41 @@
 				</div>
 
 				<!-- Social Media Links -->
-				<div class="social-media-links">
+				<div class="social-media-links center">
 					<div class="row">
 						<!-- Email -->
-						<div class="col-md-offset-3 col-md-2">
+						<div class="col-md-12">
 							<div class="dropdown">
 								<a href="#">
-									<div class="center">
-										<button class="big-circle">
-											<img src="http://i346.photobucket.com/albums/p438/adimitui/Email%20White_zpshkj8cdbx.png" id="email-logo"/>
-										</button>
-										<div class="dropdown-content-contact">
-											<h5>Email</h5>
-										</div>
+									<button class="big-circle">
+										<img src="http://i346.photobucket.com/albums/p438/adimitui/Email%20White_zpshkj8cdbx.png" id="email-logo"/>
+									</button>
+									<div class="dropdown-content-contact">
+										<h5>Email</h5>
 									</div>
 								</a>
 							</div>
-						</div>
 
-						<!-- Facebook -->
-						<div class="col-md-2">
+							<!-- Facebook -->
 							<div class="dropdown">
 								<a href="#">
-									<div class="center">
-										<button class="big-circle">
-											<img src="http://i346.photobucket.com/albums/p438/adimitui/Facebook%20Logo%202_zpspx4h8hbf.png" id="facebook-logo"/>
-										</button>
-										<div class="dropdown-content-contact">
-											<h5>Facebook</h5>
-										</div>
+									<button class="big-circle">
+										<img src="http://i346.photobucket.com/albums/p438/adimitui/Facebook%20Logo%202_zpspx4h8hbf.png" id="facebook-logo"/>
+									</button>
+									<div class="dropdown-content-contact">
+										<h5>Facebook</h5>
 									</div>
 								</a>
 							</div>
-						</div>
 
-						<!-- LinkedIn -->
-						<div class="col-md-2">
+							<!-- LinkedIn -->
 							<div class="dropdown">
 								<a href="#">
-									<div class="center">
-										<button class="big-circle">
-											<img src="http://i346.photobucket.com/albums/p438/adimitui/LinkedIn%20Logo%20Edited_zpsmsktw1qv.png" id="linkedin-logo"/>
-										</button>
-										<div class="dropdown-content-contact">
-											<h5>LinkedIn</h5>
-										</div>
+									<button class="big-circle">
+										<img src="http://i346.photobucket.com/albums/p438/adimitui/LinkedIn%20Logo%20Edited_zpsmsktw1qv.png" id="linkedin-logo"/>
+									</button>
+									<div class="dropdown-content-contact">
+										<h5>LinkedIn</h5>
 									</div>
 								</a>
 							</div>
