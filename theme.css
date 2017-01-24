@@ -58,7 +58,7 @@ button {
 	color: #FFF;
 	font-size: 80px;
 	margin-top: 200px;
-	margin-bottom: -10px;
+	margin-bottom: 10px;
 	text-shadow: 2px 1px 1px rgba(0,0,0,0.7);
 }
 
@@ -68,10 +68,19 @@ button {
 	color: #FFF;
 	font-size: 30px;
 	text-shadow: 2px 1px 1px rgba(0,0,0,0.7);
+	margin-bottom: -10px;
+}
+
+.splash h3 {
+	font-family: "Oswald";
+	text-transform: uppercase;
+	color: #FFF;
+	font-size: 24px;
+	text-shadow: 2px 1px 1px rgba(0,0,0,0.7);
 	margin-bottom: 40px;
 }
 
-.splash .circle {
+.circle {
 	width: 40px;
 	height: 40px;
 	border-radius: 100%;
@@ -82,12 +91,12 @@ button {
 	margin-right: 5px;
 }
 
-.splash .circle img {
+.circle img {
 	width: 20px;
 	height: 20px;
 }
 
-.splash .circle:hover {
+.circle:hover {
 	background-color: #037EBF;
 	transform: scale(1.2,1.2);
 	box-shadow: 1px 1px 2px rgba(0,0,0,0.5);
@@ -95,32 +104,32 @@ button {
 	transition: transform 0.5s;
 }
 
-.splash .circle .house {
+.circle .house {
 	position: relative;
 	transform: translate(0, -2px);
 }
 
-.splash .circle .user {
+.circle .user {
 	width: 25px;
 	height: auto;
 	position: relative;
 	transform: translate(0px, -2px);
 }
 
-.splash .circle .file {
+.circle .file {
 	width: 22px;
 	height: auto;
 	position: relative;
 	transform: translate(0px, -1px);
 }
 
-.splash .circle .heart {
+.circle .heart {
 	width: 24px;
 	height: auto;
 	position: relative;
 }
 
-.splash .circle .message {
+.circle .message {
 	height: 25px;
 	height: auto;
 	position: relative;
@@ -130,6 +139,29 @@ button {
 .splash-buttons {
 	margin-bottom: 256px;
 	text-align: center;
+}
+
+/* Navigation Bar */
+.navigation {
+	position: fixed;
+	top: 0;
+	left: 0;
+	right: 0;
+	background-color: #FFF;
+	box-shadow: 2px 1px 1px rgba(0,0,0,0.5);
+	padding-top: 10px;
+	padding-bottom: 10px;
+	transform: translate(0,-100%);
+}
+
+.navigation.isVisible {
+	transform: translate(0,0%);
+}
+
+.navigation .circle {
+	margin-left: 20px;
+	margin-right: 20px;
+	box-shadow: 2px 1px 1px rgba(0,0,0,0.5);
 }
 
 /* Splash Labels */
