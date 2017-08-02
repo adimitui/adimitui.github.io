@@ -26,6 +26,17 @@ app.controller('NavbarCtrl', function($scope) {
 
 app.controller('HomeCtrl', function($scope) {
 	$(window).scroll(function() {
+		if (($(window).scrollTop() + $(window).height() >= $('.resume__item').offset().top) &&
+			($(window).scrollTop() < $('#resume').offset().top + $('#resume').height())) {
+			var resumeItems = $('.resume__item__logo__whiteout');
+			for (var i = 0; i < resumeItems.length; i++) {
+				var resumeItem = $('#' + resumeItems[i].id);
+				if (resumeItem.offset().top + resumeItem.height() < $(window).scrollTop() + $(window).height()) {
+					resumeItem.addClass('resume__item__logo__whiteout--fade-away');
+				}
+			}
+		}
+
 		if ($(window).scrollTop() + $(window).height() >= $('#skills-software-graph').offset().top) {
 			softwareSkills = $('.skills-software');
 			for (var i = 0; i < softwareSkills.length; i++) {
