@@ -17,6 +17,11 @@
 	margin: 0px auto;
 }
 
+.container-skills {
+	max-width: 1000px;
+	margin: 0px auto;
+}
+
 .container-projects {
 	max-width: 650px;
 	margin: 0px auto;
