@@ -17,6 +17,12 @@ h1, h2, h3, h4, h5, h6, p {
 h1 {
 	font-family: 'Moon';
 	font-size: 70px;
+	text-transform: uppercase;
+}
+
+h2 {
+	font-family: 'Moon';
+	font-size: 30px;
 }
 
 p {
@@ -192,6 +198,114 @@ p {
 
 .about__img img {
 	width: 300px;
+}
+
+/* Resume Section */
+.resume {
+	padding: 100px 0;
+	text-align: center;
+	background-color: #efefef;
+}
+
+.resume h2 {
+	margin-top: 30px;
+	margin-bottom: 20px;
+}
+
+.resume__item {
+	width: 100%;
+	background-color: #fff;
+	padding: 20px;
+	border-radius: 10px;
+	text-align: left;
+	margin-bottom: 10px;
+}
+
+.resume__item__logo {
+	width: 100%;
+	text-align: center;
+}
+
+.resume__item__logo img {
+	margin-bottom: 10px;
+}
+
+.resume__item__logo__princeton {
+	width: 250px;
+}
+
+.resume__item__logo__ism {
+	width: 250px;
+}
+
+.resume__item__logo__princeton-engineering {
+	width: 300px;
+}
+
+.resume__item__logo__ixperience {
+	width: 500px;
+}
+
+.resume__item__logo__ewb {
+	width: 400px;
+}
+
+.resume__item__logo__business-today {
+	width: 300px;
+}
+
+.resume__item__logo__e-club {
+	width: 250px;
+}
+
+.resume__item__logo__ca {
+	width: 130px;
+}
+
+.resume__item__logo__launch {
+	width: 250px;
+}
+
+.resume__item__position {
+	width: 70%;
+	float: left;
+	text-align: left;
+}
+
+.resume__item__duration {
+	width: 30%;
+	float: left;
+	text-align: right;
+}
+
+.resume__item__position--increased {
+	width: 80%;
+	float: left;
+	text-align: left;
+}
+
+.resume__item__duration--reduced {
+	width: 20%;
+	float: left;
+	text-align: right;
+}
+
+.resume__item h4 {
+	font-family: 'Moon';
+	font-size: 18px;
+	margin-bottom: 5px;
+}
+
+.resume__item h5 {
+	font-family: 'Moon';
+	font-size: 16px;
+	margin-bottom: 5px;
+	color: #9b9898;
+}
+
+.resume__item p {
+	font-size: 16px;
+	line-height: 19px;
 }
 
 /* Construction Section */
