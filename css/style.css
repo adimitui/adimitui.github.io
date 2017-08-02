@@ -388,49 +388,34 @@ p {
 	border-bottom: 2px solid #efefef;
 }
 
-.skills__graph__columns__row__level-100 {
+.skills__graph__columns__row__level {
+	width: 0%;
+	height: 25px;
+	position: relative;
+	background-color: #798c9f;
+	border-radius: 0 10px 10px 0;
+	transform: translateY(50%);
+	transition: all 2s ease;
+}
+
+.skills__graph__columns__row__level--100 {
 	width: 100%;
-	height: 25px;
-	position: relative;
-	background-color: #798c9f;
-	border-radius: 0 10px 10px 0;
-	transform: translateY(50%);
 }
 
-.skills__graph__columns__row__level-80 {
+.skills__graph__columns__row__level--80 {
 	width: 80%;
-	height: 25px;
-	position: relative;
-	background-color: #798c9f;
-	border-radius: 0 10px 10px 0;
-	transform: translateY(50%);
 }
 
-.skills__graph__columns__row__level-60 {
+.skills__graph__columns__row__level--60 {
 	width: 60%;
-	height: 25px;
-	position: relative;
-	background-color: #798c9f;
-	border-radius: 0 10px 10px 0;
-	transform: translateY(50%);
 }
 
-.skills__graph__columns__row__level-40 {
+.skills__graph__columns__row__level--40 {
 	width: 40%;
-	height: 25px;
-	position: relative;
-	background-color: #798c9f;
-	border-radius: 0 10px 10px 0;
-	transform: translateY(50%);
 }
 
-.skills__graph__columns__row__level-20 {
+.skills__graph__columns__row__level--20 {
 	width: 20%;
-	height: 25px;
-	position: relative;
-	background-color: #798c9f;
-	border-radius: 0 10px 10px 0;
-	transform: translateY(50%);
 }
 
 /* Projects Section */
