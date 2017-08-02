@@ -25,6 +25,39 @@ app.controller('NavbarCtrl', function($scope) {
 });
 
 app.controller('HomeCtrl', function($scope) {
+	angular.element(document).ready(function() {
+		var facts = $('.life__card__fact');
+		$('#dot-1').addClass('life__dot--active');
+		for (var i = 1; i < facts.length; i++) {
+			$(this).find(facts[i]).hide();
+		}
+
+		// var photos = $('.life__photo');
+		// for (var i = 0; i < photos.length; i++) {
+		// 	console.log(photos);
+		// 	$(this).find(photos[i]).hide();
+		// }
+
+		window.setInterval(function() {
+			var currentFact = $('.life__card__fact:visible');
+			var currentFactId = currentFact[0].id;
+			var currentFactNum = currentFactId[currentFactId.length - 1];
+			switch (currentFactNum) {
+				case '1':
+					$scope.showFact(2);
+					break;
+				case '2':
+					$scope.showFact(3);
+					break;
+				case '3':
+					$scope.showFact(4);
+					break;
+				default:
+					$scope.showFact(1);
+			}
+		}, 8000);
+	});
+
 	$(window).scroll(function() {
 		if (($(window).scrollTop() + $(window).height() >= $('.resume__item').offset().top) &&
 			($(window).scrollTop() < $('#resume').offset().top + $('#resume').height())) {
@@ -56,6 +89,13 @@ app.controller('HomeCtrl', function($scope) {
 				animateSkillsGraph(languageId, language);
 			}
 		}
+
+		// if ($(window).scrollTop() + $(window).height() >= $('#life-photos').offset().top) {
+		// 	var photos = $('.life__photo');
+		// 	for (var i = 0; i < photos.length; i++) {
+		// 		$(this).find(photos[i]).hide().fadeIn('slow');
+		// 	}
+		// }
 	})
 
 	function animateSkillsGraph(condition, element) {
@@ -75,5 +115,16 @@ app.controller('HomeCtrl', function($scope) {
 			default:
 				element.addClass('skills__graph__columns__row__level--100');
 		}
+	}
+
+	$scope.showFact = function(factNum) {
+		var dot = $('#dot-' + factNum);
+		var currentDot = $('.life__dot--active');
+		dot.addClass('life__dot--active');
+		currentDot.removeClass('life__dot--active');
+		var fact = $('#fun-fact-' + factNum);
+		var currentFact = $('.life__card__fact:visible');
+		currentFact.fadeOut();
+		fact.fadeIn();
 	}
 });
