@@ -1,0 +1,201 @@
+/* General Classes */
+* {
+	box-sizing: border-box;
+	color: #000;
+}
+
+body {
+	margin: 0;
+	padding: 0;
+}
+
+h1, h2, h3, h4, h5, h6, p {
+	margin: 0;
+	color: #1e1e1e;
+}
+
+h1 {
+	font-family: 'Moon';
+	font-size: 70px;
+}
+
+p {
+	font-family: 'Segoe UI';
+	font-size: 18px;
+	line-height: 22px;
+}
+
+/* Clearfix */
+.clearfix:after {
+	visibility: hidden;
+	display: block;
+	font-size: 0;
+	content: " ";
+	clear: both;
+	height: 0;
+}
+
+.clearfix {
+	display: inline-block; 
+}
+
+* html .clearfix {
+	height: 1%;
+}
+
+.clearfix {
+	display: block;
+}
+
+/* Disable blue outline from jQuery Mobile */
+*:focus {
+	outline: none;
+}
+
+/* Navbar */
+.navbar {
+	width: 100%;
+	position: fixed;
+	padding: 10px 80px 0px 80px;
+	background-color: none;
+	top: 0;
+	left: 0;
+	right: 0;
+	z-index: 1000;
+	transition: all 0.5s ease;
+}
+
+.navbar--change-color {
+	background-color: rgba(255, 255, 255, 0.8);
+}
+
+.navbar__logo {
+	width: 30%;
+	float: left;
+}
+
+.navbar__logo img {
+	width: 50px;
+}
+
+.navbar__logo h3 {
+	font-family: 'Moon';
+	font-size: 22px;
+	display: inline-block;
+	position: relative;
+	transform: translateY(-18px);
+	color: #1e1e1e;
+}
+
+.navbar__logo img:hover, .navbar__logo h3:hover {
+	cursor: pointer;
+}
+
+.navbar__menu {
+	width: 70%;
+	float: left;
+}
+
+.navbar__menu__standard ul {
+	padding: 0;
+	list-style: none;
+	position: relative;
+	transform: translateY(-5px);
+}
+
+.navbar__menu__standard li {
+	float: right;
+	font-family: 'Segoe UI';
+	font-weight: bold;
+	font-size: 16px;
+	margin-left: 10px;
+	padding: 5px 15px;
+	transition: all 0.5s ease;
+	border-radius: 10px;
+}
+
+.navbar__menu__standard li:hover {
+	background-color: #1e1e1e;
+	cursor: pointer;
+	color: #fff;
+}
+
+/* jumbotron Section */
+.jumbotron {
+	background: url('../media/img_jumbotron.png');
+	background-position: 0px -50px;
+	background-size: cover;
+	padding: 150px 200px 200px 200px;
+}
+
+.jumbotron__img {
+	width: 120px;
+}
+
+.jumbotron__heading {
+	font-size: 70px;
+	font-family: 'Moon';
+	text-transform: uppercase;
+}
+
+.jumbotron__sub-heading {
+	font-size: 32px;
+	font-family: 'Moon';
+	text-transform: uppercase;
+}
+
+.jumbotron__button {
+	display: inline-block;
+	border: 3px solid #1e1e1e;
+	font-family: 'Moon';
+	padding: 10px 30px;
+	margin-top: 20px;
+	transition: all 0.5s ease;
+}
+
+.jumbotron__button:active {
+	cursor: pointer;
+}
+
+/* About Section */
+.about {
+	padding: 100px 0 0 0;
+	background: url('../media/img_bagan.png');
+	background-size: cover;
+}
+
+.about__text {
+	width: 80%;
+	float: left;
+	text-align: center;
+}
+
+.about__text__bio {
+	margin-top: 10px;
+	background-color: rgba(255, 255, 255, 0.5);
+	padding: 20px 30px;
+	text-align: left;
+}
+
+.about__text__bio p {
+	margin-bottom: 15px;
+}
+
+.about__text__bio p:last-child {
+	margin: 0;
+}
+
+.about__img {
+	width: 20%;
+	float: left;
+}
+
+.about__img img {
+	width: 300px;
+}
+
+/* Construction Section */
+.construction {
+	text-align: center;
+	padding: 275px 0px;
+}
