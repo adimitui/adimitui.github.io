@@ -597,54 +597,66 @@ p {
 	margin-bottom: 30px;
 }
 
-.contact label {
-	font-family: 'Segoe UI';
-	font-size: 18px;
-	font-weight: bold;
-	margin-left: 10px;
-	color: #1e1e1e;
-	background-color: #c5c5c5;
-	padding: 2px 8px;
-	border-radius: 5px 5px 0 0;
-}
-
-.contact input, .contact textarea {
-	width: 100%;
-	padding: 10px 15px;
+.contact .container-full {
+	text-align: center;
+	background-color: rgba(0, 0, 0, 0.4);
+	margin-bottom: 20px;
+	padding: 10px 0;
 	border-radius: 10px;
-	border: none;
-	font-size: 16px;
-	margin-bottom: 10px;
-	border: 2px solid #e0e0e0;
-	font-family: 'Segoe UI';
-	color: #1e1e1e;
-}
-
-.contact textarea {
-	height: 200px;
-}
-
-.contact button {
-	font-size: 20px;
-	font-family: 'Segoe UI';
-	padding: 15px 30px;
-	text-transform: uppercase;
-	border: none;
-	border-radius: 10px;
-	background-color: #798c9f;
-	color: #fff;
-	font-weight: bold;
-	width: 100%;
 	transition: all 0.5s ease;
 }
 
-.contact button:hover {
-	cursor: pointer;
-	background-color: #466f96;
+.contact .container-full--linkedin {
+	padding: 20px 0;
 }
 
-.contact button:active {
-	transform: translateY(5px);
+.contact .container-full:hover {
+	background-color: rgba(0, 0, 0, 0.6);
+}
+
+.contact__icon {
+	width: 80px;
+	height: 80px;
+	display: inline-block;
+	position: relative;
+}
+
+.contact__icon--linkedin {
+	width: 60px;
+	height: 60px;
+}
+
+.contact__icon img {
+	width: 100%;
+	position: absolute;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	left: 0;
+	transition: all 0.5s ease;
+}
+
+.contact .container-full:hover .contact__icon .contact__icon--default {
+	opacity: 0;
+}
+
+.contact h3 {
+	font-family: 'Segoe UI';
+	color: #fff;
+	font-size: 22px;
+	display: inline-block;
+	transform: translateY(-110%);
+	margin-left: 20px;
+	transition: all 0.5s ease;
+}
+
+.contact .contact__link--linkedin {
+	position: relative;
+	transform: translateY(-80%);
+}
+
+.contact .container-full:hover h3 {
+	color: #798c9f;
 }
 
 /* Construction Section */
