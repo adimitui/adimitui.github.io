@@ -594,6 +594,14 @@ p {
 .contact h1 {
 	text-align: center;
 	color: #fff;
+	margin-bottom: 5px;
+}
+
+.contact h2 {
+	color: #fff;
+	font-family: 'Segoe UI';
+	text-align: center;
+	font-size: 20px;
 	margin-bottom: 30px;
 }
 
@@ -659,13 +667,14 @@ p {
 	color: #798c9f;
 }
 
-/* Construction Section */
-.construction {
-	text-align: center;
-	padding: 275px 0px;
+/* Footer Section */
+.footer {
+	padding: 10px 50px;
 	background-color: #1e1e1e;
 }
 
-.construction h1, .construction p {
+.footer h6 {
 	color: #fff;
+	font-family: 'Segoe UI';
+	font-size: 12px;
 }
