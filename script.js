@@ -12,7 +12,7 @@ $('body').bind('touchmove', function(e) {
 	e.preventDefault();
 });
 
-$(window).load(function() {
+$(window).on("load", function() {
 	setTimeout(function() {
 		$('#loader').fadeOut(700);
 		$('body').removeClass('disable-scrolling');
