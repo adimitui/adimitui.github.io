@@ -103,12 +103,24 @@ app.controller('HomeCtrl', function($scope) {
 			}
 		}
 
-		// if ($(window).scrollTop() + $(window).height() >= $('#life-photos').offset().top) {
-		// 	var photos = $('.life__photo');
-		// 	for (var i = 0; i < photos.length; i++) {
-		// 		$(this).find(photos[i]).hide().fadeIn('slow');
-		// 	}
-		// }
+		if (($(window).scrollTop() + $(window).height() >= $('.projects__app__img').offset().top) &&
+			($(window).scrollTop() < $('#projects').offset().top + $('#projects').height())) {
+			var projects = $('.projects__app__img__phone');
+			for (var i = 0; i < projects.length; i++) {
+				var project = $('#' + projects[i].id);
+				if (project.offset().top + (project.height() / 3) < $(window).scrollTop() + $(window).height()) {
+					project.removeClass('projects__app__img__phone--hide');
+				}
+			}
+		}
+
+		if ($(window).scrollTop() + $(window).height() >= $('#life-photos').offset().top) {
+			var photos = $('.life__photo__img');
+			for (var i = 0; i < photos.length; i++) {
+				var photo = $('#' + photos[i].id);
+				photo.removeClass('life__photo__img--hide');
+			}
+		}
 	})
 
 	function animateSkillsGraph(condition, element) {
