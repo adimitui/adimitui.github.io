@@ -9,6 +9,13 @@
 </head>
 
 <body ng-app="adelleApp">
+	<div id="loader" class="loader">
+		<div class="container-full">
+			<img class="loader__icon" src="media/img_logo.png"/>
+			<h3 class="loader__caption">Loading, please wait...</h3>
+		</div>
+	</div>
+
 	<div ng-controller="NavbarCtrl" id="navbar" class="navbar clearfix">
 		<div class="navbar__logo">
 			<img ng-click="scrollTo('jumbotron')" src="media/img_logo.png"/>

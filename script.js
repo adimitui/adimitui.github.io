@@ -7,6 +7,20 @@ app.config(function($routeProvider, $locationProvider) {
 	})
 });
 
+$('body').addClass('disable-scrolling');
+$('body').bind('touchmove', function(e) {
+	e.preventDefault();
+});
+
+$(window).load(function() {
+	setTimeout(function() {
+		$('#loader').fadeOut(700);
+		$('body').removeClass('disable-scrolling');
+		$('body').unbind('touchmove');
+	}, 2000);
+});
+
+
 $(window).scroll(function() {
 	if ($(window).scrollTop() > 1) {
 		$('#navbar').addClass('navbar--change-color');

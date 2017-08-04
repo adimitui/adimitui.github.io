@@ -58,6 +58,56 @@ p {
 	outline: none;
 }
 
+/* Scrolling Disabler */
+.disable-scrolling {
+	height: 100%;
+	overflow: hidden;
+}
+
+/* Loader */
+.loader {
+	position: fixed;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	left: 0;
+	background-color: #efefef;
+	z-index: 1000;
+	text-align: center;
+	transform: all 1s ease;
+}
+
+.loader--loaded {
+	opacity: 0;
+}
+
+.loader .container-full {
+	position: relative;
+	top: 50%;
+	transform: translateY(-80%);
+}
+
+.loader__icon {
+	width: 100px;
+	animation-name: loader-fade;
+	animation-duration: 2s;
+	animation-iteration-count: infinite;
+}
+
+.loader__caption {
+	font-family: 'Moon';
+	color: #1e1e1e;
+	animation-name: loader-fade;
+	animation-duration: 2s;
+	animation-iteration-count: infinite;
+}
+
+@keyframes loader-fade {
+	0% { opacity: 100; }
+	50% { opacity: 0; }
+	100% { opacity: 100; }
+}
+
 /* Navbar */
 .navbar {
 	width: 100%;
@@ -67,7 +117,7 @@ p {
 	top: 0;
 	left: 0;
 	right: 0;
-	z-index: 1000;
+	z-index: 500;
 	transition: all 0.5s ease;
 }
 
@@ -168,6 +218,7 @@ p {
 	padding: 100px 0 0 0;
 	background: url('../media/img_bagan.png');
 	background-size: cover;
+	position: relative;
 }
 
 .about__text {
@@ -199,8 +250,8 @@ p {
 
 .about__img img {
 	width: 275px;
-	position: relative;
-	transform: translateY(114px);
+	position: absolute;
+	bottom: 0;
 }
 
 /* Resume Section */
