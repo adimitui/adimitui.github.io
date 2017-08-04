@@ -130,8 +130,21 @@ p {
 	float: left;
 }
 
-.navbar__logo img {
+.navbar__logo__img {
 	width: 50px;
+	height: 50px;
+	display: inline-block;
+	position: relative;
+}
+
+.navbar__logo__img img {
+	position: absolute;
+	width: 100%;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	left: 0;
+	transition: all 0.5s ease;
 }
 
 .navbar__logo h3 {
@@ -141,10 +154,20 @@ p {
 	position: relative;
 	transform: translateY(-18px);
 	color: #1e1e1e;
+	transition: all 0.5s ease;
 }
 
-.navbar__logo img:hover, .navbar__logo h3:hover {
+.navbar__logo h3:hover {
+	color: #545454;
 	cursor: pointer;
+}
+
+.navbar__logo__img img:hover {
+	cursor: pointer;
+}
+
+.navbar__logo__img:hover img.navbar__logo__img__default {
+	opacity: 0;
 }
 
 .navbar__menu {
