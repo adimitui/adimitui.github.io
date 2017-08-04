@@ -20,7 +20,6 @@ $(window).load(function() {
 	}, 2000);
 });
 
-
 $(window).scroll(function() {
 	if ($(window).scrollTop() > 1) {
 		$('#navbar').addClass('navbar--change-color');
