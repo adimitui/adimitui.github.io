@@ -326,6 +326,10 @@ p {
 	width: 250px;
 }
 
+.resume__item__logo__microsoft {
+	width: 275px;
+}
+
 .resume__item__logo__princeton-engineering {
 	width: 300px;
 }
@@ -370,6 +374,18 @@ p {
 	width: 80%;
 	float: left;
 	text-align: left;
+}
+
+.resume__item__position--reduced {
+	width: 60%;
+	float: left;
+	text-align: left;
+}
+
+.resume__item__duration--increased {
+	width: 40%;
+	float: left;
+	text-align: right;
 }
 
 .resume__item__duration--reduced {
