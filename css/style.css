@@ -226,6 +226,7 @@ p {
 	padding: 10px 30px;
 	margin-top: 20px;
 	transition: all 0.5s ease;
+	color: red;
 }
 
 .jumbotron__button:active {
