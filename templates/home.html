@@ -1,7 +1,13 @@
 <section id="jumbotron" class="jumbotron">
-	<div class="container-full">
+	<div class="jumbotron clearfix">
 		<img class="jumbotron__img" id="jumbotron__img-3" src="./media/jumbotron_yellow-sweater.jpg"/>
 		<img class="jumbotron__img" id="jumbotron__img-2" src="./media/jumbotron_blue-pants.jpg"/>
 		<img class="jumbotron__img" id="jumbotron__img-1" src="./media/jumbotron_pink-pants.jpg"/>
+
+		<div class="jumbotron__selector clearfix">
+			<div class="jumbotron__selector__dot" id="jumbotron__selector__dot-1" ng-click="showJumbotronImg(1)"></div>
+			<div class="jumbotron__selector__dot" id="jumbotron__selector__dot-2" ng-click="showJumbotronImg(2)"></div>
+			<div class="jumbotron__selector__dot" id="jumbotron__selector__dot-3" ng-click="showJumbotronImg(3)"></div>
+		</div>
 	</div>
 </section>

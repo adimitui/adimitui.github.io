@@ -39,29 +39,102 @@ app.config(function($routeProvider, $locationProvider) {
 
 app.controller('HomeCtrl', function($scope) {
 	angular.element(document).ready(function() {
-		// Loop through jumbotron images
+		// Instantiate jumbotron images and selectors
 		var jumbotronImg1 = $('#jumbotron__img-1');
 		var jumbotronImg2 = $('#jumbotron__img-2');
-		var jumbotronImg3 = $('#jumbotron__Img-3');
-		var currentJumbotronImg = jumbotronImg1;
-		var transitionTime = 2000;
+		var jumbotronImg3 = $('#jumbotron__img-3');
+		var jumbotronDot1 = $('#jumbotron__selector__dot-1');
+		var jumbotronDot2 = $('#jumbotron__selector__dot-2');
+		var jumbotronDot3 = $('#jumbotron__selector__dot-3');
+
+		// Bring first 2 jumbotron images to the front
+		jumbotronImg1.hide();
+		jumbotronImg1.show();
+		jumbotronImg2.hide();
+		jumbotronImg2.show();
+
+		// Loop through jumbotron images
+		var currentJumbotronImg = jumbotronImg1; // Active jumbotron image
+		jumbotronDot1.addClass('active');
+		var transitionTime = 1500;
 		var bufferTime = 500; // To replace jumbotronImg2 (which has disappeared)
+		var intervalTime = 6000;
 		window.setInterval(function() {
 			switch (currentJumbotronImg) {
 				case jumbotronImg1:
+					// Change image
+					console.log('Second image');
 					jumbotronImg1.fadeOut(transitionTime);
 					currentJumbotronImg = jumbotronImg2;
+
+					// Change selector
+					jumbotronDot1.removeClass('active');
+					jumbotronDot2.addClass('active');
 					break;
 				case jumbotronImg2:
+					// Change image
+					console.log('Third image');
 					jumbotronImg2.fadeOut(transitionTime);
 					currentJumbotronImg = jumbotronImg3;
+
+					// Change selector
+					jumbotronDot2.removeClass('active');
+					jumbotronDot3.addClass('active');
 					break;
 				default:
+					// Change image
+					console.log('First image');
 					jumbotronImg1.fadeIn(transitionTime);
-					jumbotronImg2.delay(transitionTime + bufferTime).fadeIn(bufferTime);
 					currentJumbotronImg = jumbotronImg1;
+
+					// Ensure 2nd image is behind
+					jumbotronImg2.delay(transitionTime + bufferTime).fadeIn(bufferTime);
+
+					// Change selector
+					jumbotronDot3.removeClass('active');
+					jumbotronDot1.addClass('active');
 			}
-		}, 5000);
+		}, intervalTime);
+
+		// Set jumbotron image
+		$scope.showJumbotronImg = function (jumbotronImgNum) {
+			if (jumbotronImgNum == 1) {
+				// Change image
+				console.log('First image');
+				jumbotronImg1.fadeIn(transitionTime);
+				currentJumbotronImg = jumbotronImg1;
+
+				// Make sure 2nd photo is behind
+				jumbotronImg2.delay(transitionTime + bufferTime).fadeIn(bufferTime);
+
+				// Change selector
+				jumbotronDot2.removeClass('active');
+				jumbotronDot3.removeClass('active');
+				jumbotronDot1.addClass('active');
+			} else if (jumbotronImgNum == 2) {
+				// Change image
+				console.log('Second image');
+				jumbotronImg1.fadeOut(transitionTime);
+				jumbotronImg2.fadeIn(transitionTime);
+				currentJumbotronImg = jumbotronImg2;
+
+				// Change selector
+				jumbotronDot1.removeClass('active');
+				jumbotronDot3.removeClass('active');
+				jumbotronDot2.addClass('active');
+			} else {
+				// Change image
+				console.log('Third image');
+				jumbotronImg1.fadeOut(transitionTime);
+				jumbotronImg2.fadeOut(transitionTime);
+				currentJumbotronImg = jumbotronImg3;
+
+				// Change selector
+				jumbotronDot1.removeClass('active');
+				jumbotronDot2.removeClass('active');
+				jumbotronDot3.addClass('active');
+			}
+		};
 
 		// var facts = $('.life__card__fact');
 		// $('#dot-1').addClass('life__dot--active');
