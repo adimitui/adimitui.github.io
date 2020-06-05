@@ -53,12 +53,6 @@ p {
 	display: block;
 }
 
-/* Images */
-
-.img-full {
-	width: 100%;
-}
-
 /* Disable blue outline from jQuery Mobile */
 *:focus {
 	outline: none;
@@ -203,12 +197,12 @@ p {
 
 /* jumbotron Section */
 .jumbotron {
-	/*background-position: 0px -50px;*/
 	background-size: cover;
 }
 
 .jumbotron__img {
-	width: 120px;
+	position: absolute;
+	width: 100%;
 }
 
 .jumbotron__heading {

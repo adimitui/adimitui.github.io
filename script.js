@@ -7,68 +7,92 @@ app.config(function($routeProvider, $locationProvider) {
 	})
 });
 
-$('body').addClass('disable-scrolling');
-$('body').bind('touchmove', function(e) {
-	e.preventDefault();
-});
+// $('body').addClass('disable-scrolling');
+// $('body').bind('touchmove', function(e) {
+// 	e.preventDefault();
+// });
 
-$(window).on("load", function() {
-	setTimeout(function() {
-		$('#loader').fadeOut(700);
-		$('body').removeClass('disable-scrolling');
-		$('body').unbind('touchmove');
-	}, 2000);
-});
+// $(window).on("load", function() {
+// 	setTimeout(function() {
+// 		$('#loader').fadeOut(700);
+// 		$('body').removeClass('disable-scrolling');
+// 		$('body').unbind('touchmove');
+// 	}, 2000);
+// });
 
-$(window).scroll(function() {
-	if ($(window).scrollTop() > 1) {
-		$('#navbar').addClass('navbar--change-color');
-	} else {
-		$('#navbar').removeClass('navbar--change-color');
-	}
-});
+// $(window).scroll(function() {
+// 	if ($(window).scrollTop() > 1) {
+// 		$('#navbar').addClass('navbar--change-color');
+// 	} else {
+// 		$('#navbar').removeClass('navbar--change-color');
+// 	}
+// });
 
-app.controller('NavbarCtrl', function($scope) {
-	$scope.scrollTo = function(sectionId) {
-		var section = $('#' + sectionId);
-		$('html, body').animate({
-			scrollTop: section.offset().top
-		}, 'slow');
-	}
-});
+// app.controller('NavbarCtrl', function($scope) {
+// 	$scope.scrollTo = function(sectionId) {
+// 		var section = $('#' + sectionId);
+// 		$('html, body').animate({
+// 			scrollTop: section.offset().top
+// 		}, 'slow');
+// 	}
+// });
 
 app.controller('HomeCtrl', function($scope) {
 	angular.element(document).ready(function() {
-		var facts = $('.life__card__fact');
-		$('#dot-1').addClass('life__dot--active');
-		for (var i = 1; i < facts.length; i++) {
-			$(this).find(facts[i]).hide();
-		}
-
-		// var photos = $('.life__photo');
-		// for (var i = 0; i < photos.length; i++) {
-		// 	console.log(photos);
-		// 	$(this).find(photos[i]).hide();
-		// }
-
+		// Loop through jumbotron images
+		var jumbotronImg1 = $('#jumbotron__img-1');
+		var jumbotronImg2 = $('#jumbotron__img-2');
+		var jumbotronImg3 = $('#jumbotron__Img-3');
+		var currentJumbotronImg = jumbotronImg1;
+		var transitionTime = 2000;
+		var bufferTime = 500; // To replace jumbotronImg2 (which has disappeared)
 		window.setInterval(function() {
-			var currentFact = $('.life__card__fact:visible');
-			var currentFactId = currentFact[0].id;
-			var currentFactNum = currentFactId[currentFactId.length - 1];
-			switch (currentFactNum) {
-				case '1':
-					$scope.showFact(2);
+			switch (currentJumbotronImg) {
+				case jumbotronImg1:
+					jumbotronImg1.fadeOut(transitionTime);
+					currentJumbotronImg = jumbotronImg2;
 					break;
-				case '2':
-					$scope.showFact(3);
-					break;
-				case '3':
-					$scope.showFact(4);
+				case jumbotronImg2:
+					jumbotronImg2.fadeOut(transitionTime);
+					currentJumbotronImg = jumbotronImg3;
 					break;
 				default:
-					$scope.showFact(1);
+					jumbotronImg1.fadeIn(transitionTime);
+					jumbotronImg2.delay(transitionTime + bufferTime).fadeIn(bufferTime);
+					currentJumbotronImg = jumbotronImg1;
 			}
-		}, 8000);
+		}, 5000);
+
+		// var facts = $('.life__card__fact');
+		// $('#dot-1').addClass('life__dot--active');
+		// for (var i = 1; i < facts.length; i++) {
+		// 	$(this).find(facts[i]).hide();
+		// }
+
+		// // var photos = $('.life__photo');
+		// // for (var i = 0; i < photos.length; i++) {
+		// // 	console.log(photos);
+		// // 	$(this).find(photos[i]).hide();
+		// // }
+
+		// window.setInterval(function() {
+		// 	var currentFact = $('.life__card__fact:visible');
+		// 	var currentFactId = currentFact[0].id;
+		// 	var currentFactNum = currentFactId[currentFactId.length - 1];
+		// 	switch (currentFactNum) {
+		// 		case '1':
+		// 			$scope.showFact(2);
+		// 			break;
+		// 		case '2':
+		// 			$scope.showFact(3);
+		// 			break;
+		// 		case '3':
+		// 			$scope.showFact(4);
+		// 			break;
+		// 		default:
+		// 			$scope.showFact(1);
+		// 	}
+		// }, 8000);
 	});
 
 	$(window).scroll(function() {
